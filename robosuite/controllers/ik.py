@@ -31,7 +31,7 @@ from robosuite.controllers.joint_vel import JointVelocityController
 from robosuite.utils.control_utils import *
 
 # Dict of supported ik robots
-SUPPORTED_IK_ROBOTS = {"Baxter", "Sawyer", "Panda"}
+SUPPORTED_IK_ROBOTS = {"Baxter", "Sawyer", "Panda", "Fanuc"}
 
 
 class PyBulletServer(object):

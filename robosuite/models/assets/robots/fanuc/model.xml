@@ -1,0 +1,87 @@
+<mujoco model="fanuc_lrmate200ic5l">
+    <compiler angle="radian" meshdir="meshes" balanceinertia="true" discardvisual="false"/>
+    <size njmax="500" nconmax="100"/>
+    <default/>
+    <asset>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_base_link" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_base_link.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_base_link" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_base_link.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_1" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_1.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_1" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_1.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic5l_visual_link_2" file="fanuc_lrmate200ic_support_meshes_lrmate200ic5l_visual_link_2.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic5l_collision_link_2" file="fanuc_lrmate200ic_support_meshes_lrmate200ic5l_collision_link_2.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_3" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_3.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_3" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_3.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic5l_visual_link_4" file="fanuc_lrmate200ic_support_meshes_lrmate200ic5l_visual_link_4.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic5l_collision_link_4" file="fanuc_lrmate200ic_support_meshes_lrmate200ic5l_collision_link_4.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_5" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_5.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_5" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_5.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_6" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_6.stl"/>
+        <mesh name="meshes/fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_6" file="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_6.stl"/>
+        <mesh name="meshes/table" file="table.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="meshes/plant" file="plant.stl" scale="0.1 0.1 0.1"/>
+    </asset>
+    <option>
+        <flag sensornoise="enable" />
+    </option>
+    <worldbody>
+        <geom type="plane" size="5 5 0.1"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.239216 0.239216 0.239216 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_base_link"/>
+        <geom type="mesh" rgba="0.239216 0.239216 0.239216 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_base_link"/>
+        
+        <body name="link_1" pos="0 0 0.33">
+            <joint name="joint_1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.9671 2.9671" damping="0.1"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_1"/>
+            <geom type="mesh" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_1"/>
+            <body name="link_2" pos="0.075 0 0">
+                <joint name="joint_2" pos="0 0 0" axis="0 1 0" limited="true" range="-1.5708 2.4435" damping="0.1"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic5l_visual_link_2"/>
+                <geom type="mesh" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic5l_collision_link_2"/>
+                <body name="link_3" pos="0 0 0.4">
+                    <joint name="joint_3" pos="0 0 0" axis="0 -1 0" limited="true" range="-2.5831 4.0143" damping="0.1"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_3"/>
+                    <geom type="mesh" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_3"/>
+                    <body name="link_4" pos="0 0 0.075">
+                        <joint name="joint_4" pos="0 0 0" axis="-1 0 0" limited="true" range="-3.3161 3.3161" damping="0.1"/>
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic5l_visual_link_4"/>
+                        <geom type="mesh" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic5l_collision_link_4"/>
+                        <body name="link_5" pos="0.41 0 0">
+                            <joint name="joint_5" pos="0 0 0" axis="0 -1 0" limited="true" range="-2.0944 2.0944" damping="0.1"/>
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_5"/>
+                            <geom type="mesh" rgba="0.96 0.76 0.13 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_5"/>
+                            <body name="link_6" pos="0.08 0 0">
+                                <joint name="joint_6" pos="0 0 0" axis="-1 0 0" limited="true" range="-6.2832 6.2832" damping="0.1"/>
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.15 0.15 0.15 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_visual_link_6"/>
+                                <geom type="mesh" rgba="0.15 0.15 0.15 1" mesh="fanuc_lrmate200ic_support_meshes_lrmate200ic_collision_link_6"/>
+                                <body name="right_hand" pos="X Y Z" quat="QW QX QY QZ">
+    <!-- This sites were added for visualization. They are all standardized between models-->
+    <!-- Position mimics the gripper attachment point (right_hand) -->
+    <!--  Y-axis should be perpendicular to grasping motion, and Z-axis should point out of the robot eef -->
+    <site name="ee" pos="0 0 0" size="0.01 0.01 0.01" rgba="0 0 1 1" type="sphere" group="1"/>
+    <site name="ee_x" pos="0 0 0" size="0.005 .1"  quat="0.707105 0.707108 0 0 " rgba="1 0 0 0" type="cylinder" group="1"/>
+    <site name="ee_z" pos="0 0 0" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 0" type="cylinder" group="1"/>
+    <site name="ee_y" pos="0 0 0" size="0.005 .1" quat="0.707105 0 0.707108 0 " rgba="0 1 0 0" type="cylinder" group="1"/>
+    <!-- This camera points out from the eef. -->
+    <camera mode="fixed" name="eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" fovy="75"/>
+    <!-- to add gripper -->
+
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint_1" name="torq_j1"/>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint_2" name="torq_j2"/>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint_3" name="torq_j3"/>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint_4" name="torq_j4"/>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint_5" name="torq_j5"/>
+        <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint_6" name="torq_j6"/>
+
+    </actuator>
+    <sensor>
+        <jointpos joint="joint_2" noise="0.2"/>
+        <jointvel joint="joint_2" noise="0.2"/>
+    </sensor>
+</mujoco>

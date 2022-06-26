@@ -122,6 +122,7 @@ def choose_robots(exclude_bimanual=False):
         "Kinova3",
         "IIWA",
         "UR5e",
+        "Fanuc"
     }
 
     # Add Baxter if bimanual robots are not excluded
